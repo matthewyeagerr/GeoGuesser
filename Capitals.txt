@@ -1,0 +1,53 @@
+Country,Capital
+Afghanistan,Kabul
+Albania,Tirana
+Algeria,Algiers
+Argentina,Buenos Aires
+Armenia,Yerevan
+Australia,Canberra
+Austria,Vienna
+Azerbaijan,Baku
+Bangladesh,Dhaka
+Belarus,Minsk
+Belgium,Brussels
+Bhutan,Thimphu
+Bolivia,Sucre
+Bosnia and Herzegovina,Sarajevo
+Brazil,Brasília
+Bulgaria,Sofia
+Cambodia,Phnom Penh
+Cameroon,Yaoundé
+Canada,Ottawa
+Chile,Santiago
+China,Beijing
+Colombia,Bogotá
+Croatia,Zagreb
+Cuba,Havana
+Cyprus,Nicosia
+Czech Republic,Prague
+Denmark,Copenhagen
+Dominican Republic,Santo Domingo
+Ecuador,Quito
+Egypt,Cairo
+Estonia,Tallinn
+Finland,Helsinki
+France,Paris
+Georgia,Tbilisi
+Germany,Berlin
+Greece,Athens
+Guatemala,Guatemala City
+Honduras,Tegucigalpa
+Hungary,Budapest
+Iceland,Reykjavik
+India,New Delhi
+Indonesia,Jakarta
+Iran,Tehran
+Iraq,Baghdad
+Ireland,Dublin
+Israel,Jerusalem
+Italy,Rome
+Jamaica,Kingston
+Japan,Tokyo
+Jordan,Amman
+Kazakhstan,Astana
+Kenya,Nairobi
