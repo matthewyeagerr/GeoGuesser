@@ -1,6 +1,8 @@
 from tkinter import *
 import csv
 import random
+from tkinter import ttk
+
 
 # Load capitals data from file
 def load_capitals(file_path):
@@ -11,6 +13,8 @@ def load_capitals(file_path):
 # --- GUI version of the game ---
 class GeoGame:
     def __init__(self, master, data):
+        style = ttk.Style()
+        style.theme_use("clam")
         self.master = master
         self.data = data
         self.index = 0
@@ -19,18 +23,29 @@ class GeoGame:
 
         master.title("GeoGuessr Lite - Capital Edition")
         master.geometry("500x350")
+
+        style = ttk.Style()
+        style.configure("TButton", padding=6, relief="flat", background="#ccc")
+        style.map("TButton", background=[('active', '#ff0')],
+                  foreground=[('active', '#000')])
         
+        style.configure("TLabel", background="#f0f0f0", font=("Arial", 12))
+        style.configure("TEntry", padding=5, font=("Arial", 12))
+        style.configure("TFrame", background="#f0f0f0")
+
+         # Start screen
+
         for widget in master.winfo_children():
             widget.destroy()
         self.show_start_screen()
         
         
     def show_start_screen(self):
-        label = Label(self.master, text = "Select number of questions:", font=("Arial", 16))
+        label = ttk.Label(self.master, text="Select number of questions:", font=("Arial", 16))
         label.pack(pady=20)
         
         for num in range(10,51,10):
-            button = Button(self.master, text=f"{num} Questions", command=lambda n=num: self.start_game(n))
+            button = ttk.Button(self.master, text=f"{num} Questions", command=lambda n=num: self.start_game(n))
             button.pack(pady=5)
             
     def start_game(self, num_questions):
@@ -43,22 +58,22 @@ class GeoGame:
         for widget in self.master.winfo_children():
             widget.destroy()
 
-        self.capital_label = Label(self.master, text="", font=("Arial", 16))
+        self.capital_label = ttk.Label(self.master, text="", font=("Arial", 16))
         self.capital_label.pack(pady=20)
 
-        self.entry = Entry(self.master, font=("Arial", 14))
+        self.entry = ttk.Entry(self.master, font=("Arial", 14))
         self.entry.pack()
 
-        self.feedback_label = Label(self.master, text="", font=("Arial", 12))
+        self.feedback_label = ttk.Label(self.master, text="", font=("Arial", 12))
         self.feedback_label.pack(pady=10)
 
-        self.score_label = Label(self.master, text="Score: 0 | Streak: 0", font=("Arial", 12))
+        self.score_label = ttk.Label(self.master, text="Score: 0 | Streak: 0", font=("Arial", 12))
         self.score_label.pack(pady=5)
 
-        self.submit_button = Button(self.master, text="Submit Guess", command=self.check_answer)
+        self.submit_button = ttk.Button(self.master, text="Submit Guess", command=self.check_answer)
         self.submit_button.pack(pady=10)
 
-        self.hint_button = Button(self.master, text="Hint (?)", command=self.show_hint)
+        self.hint_button = ttk.Button(self.master, text="Hint (?)", command=self.show_hint)
         self.hint_button.pack()
 
         self.next_question()
